@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="2000"/>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/file_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/status_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/file_label_text" />
+        <Constraint
+            android:id="@id/source_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationX="400dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/file_label_text"
+            app:layout_constraintStart_toEndOf="@id/status_label_text" />
+        <Constraint
+            android:id="@id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationX="400dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/status_label_text"
+            app:layout_constraintStart_toStartOf="@id/source_text" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/file_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:alpha="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/status_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:alpha="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/file_label_text" />
+        <Constraint
+            android:id="@id/source_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            app:layout_constraintBaseline_toBaselineOf="@id/file_label_text"
+            app:layout_constraintStart_toEndOf="@id/status_label_text"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <Constraint
+            android:id="@id/status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@id/status_label_text"
+            app:layout_constraintStart_toStartOf="@id/source_text" />
+    </ConstraintSet>
+
+</MotionScene>
